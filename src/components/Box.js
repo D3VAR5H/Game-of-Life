@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class Box extends Component {
+class Box extends PureComponent {
 	selectBox = () => {
 		this.props.selectBox(this.props.row, this.props.col);
 	};

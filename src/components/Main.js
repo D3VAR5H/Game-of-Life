@@ -6,7 +6,7 @@ import Toolbar from "./Toolbar";
 class Main extends Component {
 	constructor() {
 		super();
-		this.speed = 50;
+		this.speed = 20;
 		this.rows = 30;
 		this.cols = 50;
 

@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 
-import Main from "./components/Main";
+import GameOfLife from "./components/GameOfLife";
 
 ReactDOM.render(
 	<StrictMode>
-		<Main />
+		<GameOfLife />
 	</StrictMode>,
 	document.getElementById("root")
 );

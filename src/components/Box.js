@@ -8,7 +8,11 @@ class Box extends PureComponent {
 	render() {
 		return (
 			<div
-				className={this.props.selected ? "box on" : "box off"}
+				className={
+					this.props.selected
+						? `box ${this.props.gridClass} on`
+						: `box ${this.props.gridClass} off`
+				}
 				onClick={this.selectBox}
 			></div>
 		);

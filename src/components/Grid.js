@@ -3,11 +3,12 @@ import React from "react";
 import Box from "./Box";
 
 function Grid(props) {
-	const { grid, selectBox } = props;
+	const { grid, selectBox, gridClass } = props;
 	return (
 		<div
+			className="grid"
 			style={{
-				display: "grid",
+				display: `grid`,
 				position: "absolute",
 				left: "50%",
 				transform: "translateX(-50%)",
@@ -22,6 +23,7 @@ function Grid(props) {
 						row={i}
 						col={j}
 						selectBox={selectBox}
+						gridClass={gridClass}
 					/>
 				))
 			)}

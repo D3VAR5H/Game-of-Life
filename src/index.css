@@ -1,39 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
 body {
-	font-family: cursive;
-	background-color: rgb(7, 7, 39);
+	font-family: "Press Start 2P", cursive;
+	background-color: rgb(0, 0, 0);
+}
+
+.controls {
+	padding: 10px;
+	width: 250px;
+	position: absolute;
+	left: 15px;
+	top: 15px;
+	background-color: #ffffff10;
+	text-align: center;
+	z-index: 100;
+}
+
+button {
+	width: 90%;
+	margin: 10px auto;
+	padding: 15px 30px;
+	background-color: #ffffff10;
+	color: #dddddd;
+	border: none;
+	font-family: "Press Start 2P";
+	font-size: 14px;
+	transition: all ease-in-out 0.2s;
+}
+
+button:hover {
+	background-color: #ffffff2b;
+	color: #dddddd;
+}
+
+.links {
+	padding: 10px;
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	background-color: #ffffff10;
+	z-index: 100;
+}
+
+a {
+	color: #777777;
+	text-decoration: none;
+
+	transition: all ease-in-out 0.2s;
+}
+
+a:hover {
+	color: #aaaaaa;
+}
+
+.top-designs {
+	padding: 10px;
+	/* width: 250px; */
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	background-color: #ffffff10;
+	text-align: center;
+	z-index: 100;
 }
 
 .box {
-	border: 1px solid black;
 	width: 15px;
 	height: 15px;
+	background-color: transparent;
+}
+
+.grid-active {
+	border: 1px solid rgb(72, 72, 72);
 	margin-left: -1px;
 	margin-bottom: -1px;
 }
 
-.off {
-	background-color: rgb(189, 194, 255);
-}
-
 .on {
-	background-color: green;
-}
-
-.box:hover {
-	background: #00ccff;
+	background-color: rgb(223, 223, 223);
 }
 
 h1,
 h2,
 h3,
 h4 {
-	color: white;
-	margin: auto;
+	color: #dddddd;
 	text-align: center;
-	width: 50%;
-	margin-top: 10px;
-}
-
-h4 {
-	margin-top: 0px;
+	margin: 10px 0px;
+	font-size: 30px;
 }

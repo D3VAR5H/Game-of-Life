@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Grid from "./Grid";
 import Toolbar from "./Toolbar";
+import Links from "./Links";
 
 class Main extends Component {
 	constructor() {
@@ -9,9 +10,11 @@ class Main extends Component {
 		this.speed = 20;
 		this.rows = 30;
 		this.cols = 50;
+		this.isGridActive = false;
 
 		this.state = {
 			generation: 0,
+			gridClass: "",
 			grid: Array(this.rows)
 				.fill()
 				.map(() => Array(this.cols).fill(false)),
@@ -24,6 +27,14 @@ class Main extends Component {
 
 		this.setState({
 			grid: gridCopy,
+		});
+	};
+
+	toggleGrid = () => {
+		const gridClass = this.isGridActive ? "" : "grid-active";
+		this.isGridActive = !this.isGridActive;
+		this.setState({
+			gridClass: gridClass,
 		});
 	};
 
@@ -51,6 +62,10 @@ class Main extends Component {
 		this.setState({
 			grid: gridCopy,
 		});
+	};
+
+	playPauseButton = (isPlaying) => {
+		isPlaying ? this.pauseButton() : this.playButton();
 	};
 
 	playButton = () => {
@@ -91,18 +106,26 @@ class Main extends Component {
 		});
 	};
 
+	save = () => {
+		console.log(this.state.grid);
+	};
+
 	render() {
 		return (
 			<div>
-				<h1>The Game of Life</h1>
 				<Toolbar
-					play={this.playButton}
-					pause={this.pauseButton}
+					toggleGrid={this.toggleGrid}
+					playPause={this.playPauseButton}
 					clear={this.clear}
 					seed={this.seed}
 				/>
-				<Grid grid={this.state.grid} selectBox={this.selectBox} />
-				<h2>Generations:{this.state.generation}</h2>
+				<Grid
+					grid={this.state.grid}
+					gridClass={this.state.gridClass}
+					selectBox={this.selectBox}
+				/>
+				{/* <h2>Generations:{this.state.generation}</h2> */}
+				<Links />
 			</div>
 		);
 	}
